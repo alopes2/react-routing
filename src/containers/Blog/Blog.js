@@ -23,8 +23,8 @@ class Blog extends Component {
                                 hash: '#submit',
                                 search: '?quick-submit=true'
                             }}>New Post</Link></li> */}
-                            <li><NavLink 
-                                to="/posts" 
+                            <li><NavLink
+                                to="/posts"
                                 activeClassName="my-active"
                                 activeStyle={{
                                     color: '#fa923f',
@@ -44,7 +44,8 @@ class Blog extends Component {
                 <Switch>
                     {this.state.auth ? <Route path="/new-post" exact component={NewPost} /> : null}
                     <Route path="/posts" component={Posts} />
-                    <Redirect from="/" to="/posts" />
+                    <Route render={() => <h1>Not found!</h1>} />
+                    {/* <Redirect from="/" to="/posts" /> */}
                     {/* <Route path="/:id" exact component={FullPost} /> */}
                 </Switch>
             </div>
